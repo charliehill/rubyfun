@@ -11,8 +11,6 @@
 
 Alphabet = "abcdefghijklmnopqrstuvwxyz"
 
-# This version doesn't use globals
-
 # ==========================================================
 # M E T H O D S
 
@@ -106,8 +104,7 @@ for i in 0..26
 	letters_used[Alphabet[i]] = false
 end
 
-# Prepare to count the number of letters that have been used 
-# This makes it easier to 
+# Prepare to count the letters that are not in the puzzle word
 wrong_letters_count = 0 
 
 # Create the initial state of the hangman as an arrage of strings
