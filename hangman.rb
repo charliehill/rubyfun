@@ -7,14 +7,17 @@
 # Charlie Hill
 
 # ==========================================================
-# G L O B A L   V A R I A B L E S
+# C O N S T A N T S   &   G L O B A L   V A R I A B L E S
+
+Alphabet = "abcdefghijklmnopqrstuvwxyz"
+
 # This version doesn't use globals
 
 # ==========================================================
 # M E T H O D S
 
 # Method to get a single, valid, letter
-def get_letter (letters_used, alphabet)
+def get_letter (letters_used)
 	last_input_was_good = false
 	print "Guess a letter: "
 	while true do  
@@ -26,7 +29,7 @@ def get_letter (letters_used, alphabet)
 		elsif input.length != 1
 			puts "Just one letter at a time, please!"
 		# Error if not in alphabet, allowing for uppercase or lowercase
-		elsif !alphabet.include? input.downcase
+		elsif !Alphabet.include? input.downcase
 			puts "Alphabetical characters only, please!"
 		# Input is good, so return it
 		else
@@ -97,11 +100,10 @@ for i in 0...word.length
 end
 
 # Make a hash of all letters and set the value of each letter to false
-alphabet = "abcdefghijklmnopqrstuvwxyz"
 letters_used = Hash.new
 
 for i in 0..26 
-	letters_used[alphabet[i]] = false
+	letters_used[Alphabet[i]] = false
 end
 
 # Prepare to count the number of letters that have been used 
@@ -125,7 +127,7 @@ draw_state(letters_found, letters_used, wrong_letters_count, hangman_string, mar
 # Get a letter from the user, redraw the hangman, and break when done or dead 
 while wrong_letters_count <6 do 
 	# Get a valid letter from the user
-	guess = get_letter(letters_used, alphabet)
+	guess = get_letter(letters_used)
 	# Update the list of used characters 
 	letters_used[guess] = true
 	# If the guess is present in the string, update the letters_found, 
