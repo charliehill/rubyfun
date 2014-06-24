@@ -4,7 +4,7 @@
 # Open a Terminal window 80 x 25 characters in size
 # Hiding the screen, User A enters a word and hands the computer to User B. 
 # User B tries to guess the word with the usual rules. 
-# Charlie Hill 
+# Charlie Hill
 
 # ==========================================================
 # G L O B A L   V A R I A B L E S
