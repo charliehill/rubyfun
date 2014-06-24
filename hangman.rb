@@ -32,7 +32,7 @@ def get_letter (letters_used, alphabet)
 		else
 			return input
 		end
-		# Input wasn't good so promt the user to try again
+		# Input wasn't good so prompt the user to try again
 		print "Try again! Guess a letter: "
 	end
 end
